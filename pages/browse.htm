@@ -1,0 +1,55 @@
+title = "Home page"
+url = "/"
+layout = "default"
+
+[browseMap]
+==
+
+<div class="wrapper">
+    <div class="side-menu">
+
+
+        <div class="ui inverted segment">
+            <div class="ui inverted relaxed divided list">
+                <a href="#" class="item">
+                    <div class="content">
+                        <div class="header">Snickerdoodle</div>
+                        An excellent companion
+                    </div>
+                </a>
+                <a href="#" class="item">
+                    <div class="content">
+                        <div class="header">Poodle</div>
+                        A poodle, its pretty basic
+                    </div>
+                </a>
+                <a href="#" class="item">
+                    <div class="content">
+                        <div class="header">Paulo</div>
+                        He's also a dog
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="map-area" id="map"></div>
+
+</div>
+
+<div class="action-area">
+    <a
+        data-control="ajaxModal"
+        data-handler="onPostAd"
+        data-update-partial="browse/post-form"
+        class="ui labeled icon positive button">
+        <i class="tag icon"></i>
+        Place Ad
+    </a>
+</div>
+
+{% put scripts %}
+    <script src="{{ ['assets/javascript/pages/browse.js']|theme }}"></script>
+{% endput %}
+

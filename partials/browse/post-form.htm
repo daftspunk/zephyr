@@ -1,0 +1,39 @@
+<i class="close icon" data-dismiss="modal"></i>
+<div class="header">
+
+    <span>
+        I have something to
+        <div class="ui inline dropdown" data-control="dropdown">
+            <div class="text">sell</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item" data-text="sell">Sell</div>
+                <div class="item" data-text="buy">Buy</div>
+            </div>
+        </div>
+    </span>
+
+</div>
+
+<div class="content">
+    {{ form_open({
+        class: 'ui form'
+    }) }}
+
+        <div class="field">
+            <label>Ad title</label>
+            <input type="text" name="title" value="" />
+        </div>
+
+        <div class="field">
+            <label>Description</label>
+            <textarea name="details"></textarea>
+        </div>
+
+    {{ form_close() }}
+</div>
+<div class="actions">
+    <div class="ui button" data-dismiss="modal">Cancel</div>
+    <div class="ui button">OK</div>
+</div>
+

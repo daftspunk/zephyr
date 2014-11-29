@@ -1,34 +1,42 @@
+
+@sidebarWidth: 300px;
+
 html, body {
     position: relative;
     height: 100%;
 }
 
 .wrapper {
+
     display: table;
     table-layout: fixed;
     height: 100%;
     width: 100%;
     background: blue;
-}
 
-.map-area, .side-menu {
-    display: table-cell;
-    vertical-align: top;
-    height: 100%;
-}
+    .map-area, .side-menu {
+        display: table-cell;
+        vertical-align: top;
+        height: 100%;
+    }
 
-.side-menu {
-    background: blue;
-    width: 200px;
-}
+    .side-menu {
+        background: #333;
+        width: @sidebarWidth;
+    }
 
-.map-area {
-    background: red;
+    .map-area {
+        background: #ccc;
+    }
 }
 
 .action-area {
     position: absolute;
     top: 0;
     right: 0;
+    left: 0;
     padding: 2em;
+    .background-image(linear-gradient(to bottom, rgba(0,0,0,.35) 0%, transparent 100%));
+    text-align: right;
+    margin-left: @sidebarWidth;
 }
