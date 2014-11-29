@@ -1,0 +1,34 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+.wrapper {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    background: blue;
+}
+
+.map-area, .side-menu {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+}
+
+.side-menu {
+    background: blue;
+    width: 200px;
+}
+
+.map-area {
+    background: red;
+}
+
+.action-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2em;
+}

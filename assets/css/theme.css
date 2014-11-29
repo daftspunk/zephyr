@@ -1,0 +1,42 @@
+/*
+ *
+ * !! WARNING !! THIS CSS FILE HAS BEEN AUTOMATICALLY GENERATED !!
+ *
+ * Any modifications made to this file will be lost next time it is generated.
+ * Consider modifying the 'theme.less' file found in the 'less' folder instead
+ * or create a new custom CSS file to override the rules in this one.
+ *
+ * !! YOU HAVE BEEN WARNED !! MODIFY THIS FILE AT YOUR OWN RISK !!
+ *
+ */
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.wrapper {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  background: blue;
+}
+.map-area,
+.side-menu {
+  display: table-cell;
+  vertical-align: top;
+  height: 100%;
+}
+.side-menu {
+  background: blue;
+  width: 200px;
+}
+.map-area {
+  background: red;
+}
+.action-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2em;
+}

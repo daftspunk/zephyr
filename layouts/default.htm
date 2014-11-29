@@ -16,13 +16,13 @@ security = "all"
     </head>
     <body>
 
-        <div class="container">
-            {% page %}
-        </div>
+        {% page %}
 
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="{{ [
             'assets/javascript/jquery.js',
             'assets/vendor/semantic-ui/semantic.js',
+            'assets/vendor/gmaps/gmaps.js',
             'assets/javascript/app.js',
             '@framework',
             '@framework.extras'
