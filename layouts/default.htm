@@ -1,0 +1,32 @@
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zephyr</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="{{ [
+            'assets/css/theme.css',
+            'assets/vendor/semantic-ui/semantic.css',
+            '@framework.extras'
+        ]|theme }}" rel="stylesheet">
+        {% styles %}
+    </head>
+    <body>
+
+        <div class="container">
+            {% page %}
+        </div>
+
+        <script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/vendor/semantic-ui/semantic.js',
+            'assets/javascript/app.js',
+            '@framework',
+            '@framework.extras'
+        ]|theme }}"></script>
+        {% scripts %}
+    </body>
+</html>
