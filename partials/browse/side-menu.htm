@@ -1,0 +1,44 @@
+{% for item in items %}
+    <a
+        href="javascript:;"
+        data-id="{{ item.id }}"
+        data-title="{{ item.title }}"
+        data-lat="{{ item.latitude }}"
+        data-lng="{{ item.longitude }}"
+        class="item">
+        <div class="content">
+            <div class="header">{{ item.title }}</div>
+            {{ item.city }}, {{ item.state_code }}
+        </div>
+        <script type="text/template" data-infowindow>
+
+            <div class="ui card"
+                style="line-height:1.35;overflow:hidden;white-space:nowrap;">
+                <div class="image">
+                    <img src="{{ post.image.thumb(290, 190, { ext: 'png' }) ?: 'http://placehold.it/290x190' }}">
+                </div>
+                <div class="content">
+                    <a class="header">{{ item.title }}</a>
+                    <div class="meta">
+                        <span class="date">Posted {{ item.created_at }}</span>
+                    </div>
+                    <div class="description">
+                        {{ item.details }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="user icon"></i>
+                        {{ random(3) }} contacts so far!
+                    </a>
+                </div>
+                <div class="ui bottom attached positive button">
+                    <i class="comment outline icon"></i>
+                    Contact this person
+                </div>
+            </div>
+
+
+        </script>
+    </a>
+{% endfor %}

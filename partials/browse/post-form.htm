@@ -15,8 +15,10 @@
 
 </div>
 
-{{ form_open({
-    class: 'ui form content'
+{{ form_ajax('onPostAd', {
+    id: 'postAdForm',
+    class: 'ui form content',
+    'data-attach-loading': 1
 }) }}
 
     <div class="image">
@@ -69,6 +71,6 @@
 {{ form_close() }}
 
 <div class="actions">
-    <div class="ui button" data-dismiss="modal">Cancel</div>
-    <div class="ui button">OK</div>
+    <button class="ui button" data-dismiss="modal">Cancel</button>
+    <button class="ui positive button" onclick="$('#postAdForm').submit()">Post Ad!</button>
 </div>

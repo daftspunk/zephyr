@@ -21,32 +21,32 @@ function onInit()
 <div class="wrapper">
     <div class="side-menu">
 
-        <div class="ui inverted segment">
-            <div class="ui inverted relaxed divided list">
-                <a href="#" class="item">
-                    <div class="content">
-                        <div class="header">Snickerdoodle</div>
-                        An excellent companion
-                    </div>
-                </a>
-                <a href="#" class="item">
-                    <div class="content">
-                        <div class="header">Poodle</div>
-                        A poodle, its pretty basic
-                    </div>
-                </a>
-                <a href="#" class="item">
-                    <div class="content">
-                        <div class="header">Paulo</div>
-                        He's also a dog
-                    </div>
-                </a>
+        {{ form_open({
+            id: 'sideMenuForm',
+            class: 'ui form',
+        }) }}
+
+            <input type="hidden" id="activeLatitude" name="active_latitude" />
+            <input type="hidden" id="activeLongitude" name="active_longitude" />
+            <input type="hidden" id="activeRadius" name="active_radius" />
+
+            <div class="ui inverted segment">
+                <div
+                    id="partialBrowseSideMenu"
+                    class="ui inverted relaxed divided list">
+                    {% partial 'browse/side-menu' %}
+                </div>
             </div>
-        </div>
+
+        {{ form_close() }}
 
     </div>
-    <div class="map-area" id="map"></div>
 
+    <div
+        class="map-area"
+        data-lat="{{ get('lat', '-35.2819998') }}"
+        data-lng="{{ get('lng', '149.1286843') }}"
+        id="map"></div>
 </div>
 
 <div class="action-area">
@@ -54,7 +54,7 @@ function onInit()
         data-control="ajaxModal"
         data-handler="onInit"
         data-update-partial="browse/post-form"
-        class="ui labeled icon positive button">
+        class="ui labeled icon primary button">
         <i class="tag icon"></i>
         Place Ad
     </a>
