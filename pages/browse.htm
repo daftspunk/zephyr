@@ -1,13 +1,25 @@
 title = "Home page"
 url = "/"
 layout = "default"
+hidden = "0"
 
 [browseMap]
-==
 
+
+[imageUploader]
+previewWidth = "100"
+previewHeight = "100"
+deferredBinding = "1"
+==
+<?php
+function onInit()
+{
+    $this->imageUploader->bindModel('image', $this->browseMap->getEditPost());
+}
+?>
+==
 <div class="wrapper">
     <div class="side-menu">
-
 
         <div class="ui inverted segment">
             <div class="ui inverted relaxed divided list">
@@ -32,7 +44,6 @@ layout = "default"
             </div>
         </div>
 
-
     </div>
     <div class="map-area" id="map"></div>
 
@@ -41,7 +52,7 @@ layout = "default"
 <div class="action-area">
     <a
         data-control="ajaxModal"
-        data-handler="onPostAd"
+        data-handler="onInit"
         data-update-partial="browse/post-form"
         class="ui labeled icon positive button">
         <i class="tag icon"></i>
@@ -52,4 +63,3 @@ layout = "default"
 {% put scripts %}
     <script src="{{ ['assets/javascript/pages/browse.js']|theme }}"></script>
 {% endput %}
-

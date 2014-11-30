@@ -95,7 +95,6 @@
     Modal.prototype.destroy = function() {
         this.$modal.remove()
         this.$el.data('oc.ajaxModal', null)
-
     }
 
     Modal.prototype.getLoaderSegment = function() {

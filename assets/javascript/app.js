@@ -7,6 +7,7 @@
  * Dry UI
  *
 =require ../vendor/dry-ui/js/ajax-modal
+=require ../vendor/dry-ui/js/location-autocomplete
  */
 
 /*

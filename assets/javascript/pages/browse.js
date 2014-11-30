@@ -14,6 +14,13 @@ new GMaps({
     },
     mapTypeControlOptions: {
         mapTypeIds: [google.maps.MapTypeId.ROADMAP]
-    }, 
-    styles: styles
+    },
+    styles: styles,
+    dragend: function() {
+        onMapDrag();
+    }
 });
+
+function onMapDrag() {
+    
+}

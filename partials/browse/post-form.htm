@@ -2,7 +2,7 @@
 <div class="header">
 
     <span>
-        I have something to
+        I have something I want to
         <div class="ui inline dropdown" data-control="dropdown">
             <div class="text">sell</div>
             <i class="dropdown icon"></i>
@@ -15,25 +15,60 @@
 
 </div>
 
-<div class="content">
-    {{ form_open({
-        class: 'ui form'
-    }) }}
+{{ form_open({
+    class: 'ui form content'
+}) }}
+
+    <div class="image">
+        {% component 'imageUploader' %}
+    </div>
+
+    <div class="description">
 
         <div class="field">
             <label>Ad title</label>
-            <input type="text" name="title" value="" />
+            <input type="text" name="Post[title]" value="" />
         </div>
 
         <div class="field">
             <label>Description</label>
-            <textarea name="details"></textarea>
+            <textarea name="Post[details]"></textarea>
         </div>
 
-    {{ form_close() }}
-</div>
+        <div class="field">
+            <label for="specificLocation">Your public location</label>
+            <input
+                type="text"
+                name="Post[address]"
+                class="form-control input-lg"
+                value=""
+                id="specificLocation"
+                placeholder="Enter your address or a nearby address"
+                data-control="locationAutocomplete"
+                data-input-street="#locationStreet"
+                data-input-city="#locationCity"
+                data-input-state="#locationState"
+                data-input-zip="#locationZip"
+                data-input-country="#locationCountry"
+                data-input-latitude="#locationLatitude"
+                data-input-longitude="#locationLongitude"
+                />
+        </div>
+
+        <div style="display: none">
+            <input type="text" name="Post[latitude]" value="" id="locationLatitude" />
+            <input type="text" name="Post[longitude]" value="" id="locationLongitude" />
+            <input type="text" name="Post[city]" value="" id="locationCity" />
+            <input type="text" name="Post[zip]" value="" id="locationZip" />
+            <input type="text" name="Post[state_code]" value="" id="locationState" />
+            <input type="text" name="Post[country_code]" value="" id="locationCountry" />
+        </div>
+
+    </div>
+
+{{ form_close() }}
+
 <div class="actions">
     <div class="ui button" data-dismiss="modal">Cancel</div>
     <div class="ui button">OK</div>
 </div>
-
