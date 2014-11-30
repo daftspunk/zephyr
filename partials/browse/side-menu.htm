@@ -14,13 +14,15 @@
 
             <div class="ui card"
                 style="line-height:1.35;overflow:hidden;white-space:nowrap;">
-                <div class="image">
-                    <img src="{{ post.image.thumb(290, 190, { ext: 'png' }) ?: 'http://placehold.it/290x190' }}">
-                </div>
+                {% if item.image %}
+                    <div class="image">
+                        <img src="{{ item.image.getThumb(290, 190, { ext: 'png' }) }}" />
+                    </div>
+                {% endif %}
                 <div class="content">
                     <a class="header">{{ item.title }}</a>
                     <div class="meta">
-                        <span class="date">Posted {{ item.created_at }}</span>
+                        <span class="date">Posted {{ item.created_at.diffForHumans() }}</span>
                     </div>
                     <div class="description">
                         {{ item.details }}
@@ -28,8 +30,8 @@
                 </div>
                 <div class="extra content">
                     <a>
-                        <i class="user icon"></i>
-                        {{ random(3) }} contacts so far!
+                        <i class="location arrow icon"></i>
+                        {{ item.address }}
                     </a>
                 </div>
                 <div class="ui bottom attached positive button">
@@ -41,4 +43,6 @@
 
         </script>
     </a>
+{% else %}
+    <p><em>There are no listings in this area.</em></p>
 {% endfor %}
